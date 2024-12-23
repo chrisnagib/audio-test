@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Test</title>
 </head>
 <body>
     <h3>Listen to the Audio</h3>
     <audio id="audio" controls>
-        <source src="https://voca.ro/1kPLJ9myLVGp" type="audio/mp3">
+        <!-- Try local file first -->
+        <source src="audio.mp3" type="audio/mpeg" onerror="this.onerror=null; this.src='https://voca.ro/1kPLJ9myLVGp';">
         Your browser does not support the audio element.
     </audio>
     <p id="message"></p>
