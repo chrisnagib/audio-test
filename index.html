@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Test</title>
+</head>
+<body>
+    <h3>Listen to the Audio</h3>
+    <audio id="audio" controls>
+        <source src="YOUR_AUDIO_FILE_URL" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p id="message"></p>
+
+    <script>
+        let playCount = 0;
+        const audio = document.getElementById("audio");
+        const message = document.getElementById("message");
+
+        audio.addEventListener("play", () => {
+            playCount++;
+            if (playCount > 2) {
+                audio.pause();
+                audio.controls = false;
+                message.textContent = "You have reached the maximum number of plays.";
+            }
+        });
+    </script>
+</body>
+</html>
